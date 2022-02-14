@@ -1,4 +1,5 @@
 export const reactStrictMode = true;
 export const images = {
-  domains: ['images.unsplash.com']
+  domains: ['images.unsplash.com'],
+  loader: ['custom']
 };
