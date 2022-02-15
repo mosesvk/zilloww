@@ -51,8 +51,6 @@ export const Banner = ({
 );
 
 const Home = ({ propertiesForSale, propertiesForRent }) => {
-  console.log(propertiesForSale, propertiesForRent);
-
   return (
     <Box>
       <Banner
