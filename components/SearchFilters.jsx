@@ -17,14 +17,21 @@ export default function SearchFilters() {
   const router = useRouter();
 
   const searchProperties = (filterValues) => {
+    //router is from useRouter() in the next/router package
+    // this router contains an object with the pathname -> the url AFTER the main URL like /users or /search
+    // Also contains a query object of which we defined in filterData.js (ex. queryName='sort', value='price-asc', thus the query = {sort: 'price-asc'}
+    // So if the pathname='search, then the Whole URL would be '{URL}/search?sort=price-asc)
     const path = router.pathname;
     const { query } = router;
 
+    // this function initialized in filterData.js
+    // Whatever we select will point towards this function which points to the filterData.js file
     const values = getFilterValues(filterValues)
 
     values.forEach((item) => {
       if(item.value && filterValues?.[item.name]) {
         query[item.name] = item.value
+        // updating the query that we defined above on line 25
       }
     })
 
